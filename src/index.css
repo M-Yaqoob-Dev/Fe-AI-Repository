@@ -1,0 +1,174 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f1ea;
+  --surface: #fffdf8;
+  --ink: #1c1915;
+  --muted: #5c564c;
+  --line: #d8d0c4;
+  --accent: #215c4a;
+  --accent-ink: #f7fff9;
+  --danger: #9b2c2c;
+  --danger-bg: #fdecec;
+  --success: #215c4a;
+  --success-bg: #e7f5ee;
+  --focus: #1d4ed8;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #121417;
+  --surface: #1c2127;
+  --ink: #f3efe6;
+  --muted: #c2b8a8;
+  --line: #3a414b;
+  --accent: #7dd3b0;
+  --accent-ink: #102019;
+  --danger: #f2a0a0;
+  --danger-bg: #3a2323;
+  --success: #9ae6c3;
+  --success-bg: #1c332a;
+  --focus: #93c5fd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+main {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.settings-form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.form-header h1,
+.panel h2 {
+  margin: 0 0 0.35rem;
+}
+
+.form-header p,
+.hint {
+  margin: 0;
+  color: var(--muted);
+}
+
+.panel,
+.banner {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 1.15rem 1.2rem;
+}
+
+.banner-success {
+  color: var(--success);
+  background: var(--success-bg);
+}
+
+.banner-error,
+.field-error {
+  color: var(--danger);
+}
+
+.banner-error {
+  background: var(--danger-bg);
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 0.9rem;
+}
+
+.field input,
+.chip {
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.field input {
+  min-height: 2.6rem;
+  padding: 0.45rem 0.75rem;
+}
+
+.field input[aria-invalid="true"] {
+  border-color: var(--danger);
+}
+
+fieldset {
+  border: 0;
+  margin: 0.75rem 0 0;
+  padding: 0;
+}
+
+.theme-options {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+}
+
+.check-row {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  margin-top: 0.85rem;
+}
+
+.check-row strong,
+.check-row .hint {
+  display: block;
+}
+
+.field-error {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  min-height: 2.6rem;
+  padding: 0 1.1rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
